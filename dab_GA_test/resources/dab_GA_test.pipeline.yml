@@ -11,6 +11,6 @@ resources:
 
       configuration:
         bundle.sourcePath: ${workspace.file_path}/src
-        category: 'db_platform'
-        subcategory : "db_platform_wf"
-        test: dlt_val
+        # category: 'db_platform'
+        # subcategory : "db_platform_wf"
+        # test: dlt_val
