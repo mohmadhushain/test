@@ -1,0 +1,13 @@
+# The main pipeline for dab_kt_test1
+resources:
+  pipelines:
+    dab_kt_test1_pipeline:
+      name: dab_kt_test1_pipeline
+      catalog: my_databricks
+      schema: dab_kt_test1_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+      serverless: True
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src

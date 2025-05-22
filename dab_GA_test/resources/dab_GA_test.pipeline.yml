@@ -1,0 +1,16 @@
+# The main pipeline for dab_GA_test
+resources:
+  pipelines:
+    dab_GA_test_pipeline:
+      name: dab_GA_test_pipeline
+      catalog: my_databricks
+      schema: dab_GA_test_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src
+        category: 'db_platform'
+        subcategory : "db_platform_wf"
+        test: dlt_val
